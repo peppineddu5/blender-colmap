@@ -2,13 +2,20 @@
 
 A dependency-free Blender add-on for generating multiple camera rotations from one fixed viewpoint. It is intended as a small helper for Gaussian splatting / panoramic capture planning.
 
-![Gaussian splatting training view](docs/gaussian-splatting-training.png)
+![Example Gaussian-splatting reconstruction](docs/gaussian-splatting-training.png)
 
 ## Requirements
 
 - Blender 3.6 or newer.
 - No additional packages for the add-on itself.
 - `pycolmap` and NumPy are optional and used only by the independent model-validation script.
+
+## Quick start
+
+1. In Blender, install `gaussian_camera_rig.zip`, enable **3D View: Gaussian Camera Rig**, and open a 3D View sidebar with `N`.
+2. In **Gaussian Cameras**, position and orient the viewport, choose a preset, set the camera count and lens, then click **Generate Cameras**. The shortcut is **Ctrl+Shift+Alt+C**.
+3. In **COLMAP Export**, choose an output directory, keep **Render images** enabled if images are needed, and click **Export COLMAP Dataset**.
+4. Use `cameras.txt`, `images.txt`, `points3D.txt`, and the `images/` folder in your Gaussian-splatting workflow.
 
 ## Install
 
