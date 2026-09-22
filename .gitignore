@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+
+# Local Python environments and tooling caches
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Blender-generated files
+*.blend1
+*.blend2
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local validation output
+gs-colmap-fixtures/
+
+# Temporary previews extracted from the attached screencast
+screencast-contact-sheet.png
+screencast-frames/

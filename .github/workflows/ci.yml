@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile Python sources
+        run: python -m compileall -q gaussian_camera_rig tests scripts
+
+      - name: Build add-on archive
+        run: python scripts/build_addon_zip.py --output "$RUNNER_TEMP/gaussian_camera_rig.zip"
+
+      - name: Validate add-on archive
+        run: python scripts/validate_package.py "$RUNNER_TEMP/gaussian_camera_rig.zip"
