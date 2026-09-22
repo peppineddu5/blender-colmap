@@ -1020,7 +1020,7 @@ class GS_CameraRigSettings(bpy.types.PropertyGroup):
     lens: FloatProperty(
         name="Lens",
         description="Focal length applied to every generated camera",
-        default=50.0,
+        default=20.0,
         min=1.0,
         max=250.0,
         unit="LENGTH",

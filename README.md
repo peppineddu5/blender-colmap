@@ -25,7 +25,7 @@ A dependency-free Blender add-on for generating multiple camera rotations from o
 
 ## Use
 
-Place and orient the 3D View where you want the camera rig, then choose a preset and click **Generate Cameras**. You can also press **Ctrl+Shift+Alt+C** in the 3D View, including while using Walk or Fly navigation, to generate the cameras. During Walk/Fly, **Ctrl+Shift+C** is also accepted as a simpler fallback. Camera 1 uses the current viewport position and orientation. Ring, arc, and spherical presets keep that position for every camera and vary the rotation; the 2D grid varies camera positions while keeping the current looking direction.
+Place and orient the 3D View where you want the camera rig, then choose a preset and click **Generate Cameras**. You can also press **Ctrl+Shift+Alt+C** in the 3D View, including while using Walk or Fly navigation, to generate the cameras. Camera 1 uses the current viewport position and orientation. Ring, arc, and spherical presets keep that position for every camera and vary the rotation; the 2D grid varies camera positions while keeping the current looking direction.
 
 Available presets:
 
@@ -37,7 +37,7 @@ Available presets:
 
 The horizontal ring and front arc rotate the complete current camera pose around world Z. This keeps the same pitch for every camera, so if the 3D View is looking down, all cameras continue looking down. The spherical presets intentionally vary pitch to cover the sphere.
 
-The **Lens** value is independent from the camera you are currently inside and is applied identically to every generated camera. For example, set it to `50 mm` and every generated camera will render with the same 50 mm framing. Generated cameras are kept in a `GS_Cameras` collection and all share the current viewport location.
+The **Lens** value is independent from the camera you are currently inside and is applied identically to every generated camera. It defaults to `20 mm`; every generated camera uses the same framing. Generated cameras are kept in a `GS_Cameras` collection and all share the current viewport location.
 
 The camera-view zoom slider in the 3D View is only a viewport display control. Render framing comes from the camera data; the add-on keeps that data consistent across the batch.
 
